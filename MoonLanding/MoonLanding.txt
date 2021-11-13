@@ -1,0 +1,32 @@
+BEGIN
+height = 800
+velocity = 0
+
+FUNCTION DoBurn(time)
+    height += (0.875 * time**2) / 2 + velocity * time
+    velocity+= 0.875 * time
+
+FUNCTION DoCoast(time)
+    height += (2.5 * time**2) / 2 + velocity * time
+    velocity+= 2.5 * time
+
+FUNCTION InputHandler()
+    WHILE True THEN
+        input = INPUT
+        IF(input IS valid)
+            RETURN input
+        ELSE THEN
+            OUTPUT "Invalid Value! Try Again."
+
+WHILE height > 0 THEN
+    OUTPUT "Do You wish to coast (C) or to burn (B)"
+    OUTPUT "Velocity:"+velocity
+    OUTPUT "Height"+height
+    choice = InputHandler()
+    OUTPUT "Duration? :"
+    time = InputHandler()
+    IF choice == "B" THEN
+        DoBurn(time)
+    ELSE THEN
+        DoCoast(time)
+END

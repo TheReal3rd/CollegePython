@@ -1,0 +1,18 @@
+BEGIN
+text = INPUT
+result = ""
+vowels = "aeiouy"
+IF text[0] contains vowels THEN
+    result = text + "way"
+ELSE THEN
+    firstLetter = text[0]
+    length  = ACTION get text length
+    counter = 1
+    tempString = ""
+    WHILE counter != length THEN
+        tempString + text[counter]
+        counter++
+    result = tempString + firstLetter + "ay"
+
+OUTPUT result
+END

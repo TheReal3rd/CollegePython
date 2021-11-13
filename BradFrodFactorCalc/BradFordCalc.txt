@@ -1,0 +1,21 @@
+BEGIN
+close = FALSE
+WHILE close IS FALSE THEN
+    OUTPUT "Please enter the spell:"
+    spell = INPUT
+    OUTPUT "Please enter the number of days absent:"
+    days = INPUT
+    score = spell **2 * days
+    OUTPUT "The score is:" + score
+    IF score <= 45 THEN
+        OUTPUT "No warnings"
+    ELSE IF <= 100 THEN
+        OUTPUT "Warnings."
+    ELSE THEN
+        OUTPUT "Able to cancel contract."
+
+    OUTPUT "Do you wish to close the program? True or False"
+    choice = INPUT
+    IF choice == "YES" OR "True"
+        close = TRUE
+END
