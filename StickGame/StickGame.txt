@@ -1,0 +1,34 @@
+numSticks = 21
+instructions = """
+The aim for the game is to trick the computer to take the last stick.
+"""
+
+FUNCTION getComputer( num )
+	compute	= num % 4
+	IF compute <= 0 THEN
+		RETURN 1
+	ELSE THEN
+		RETURN compute
+
+FUNCTION handleInput()
+	WHILE TRUE THEN
+		userInput = INPUT
+		IF userInput > 0 OR userInput <= 3 THEN
+			RETURN userInput
+		ELSE THEN
+			OUTPUT "Invalid range must be between 0 and 3"
+			
+BEGIN
+OUTPUT instructions
+WHILE numStick > 0 THEN
+	player = handleInput()
+	numStick -= player
+	IF numStick > 0 THEN
+		computer = getComputer()
+		numStick -= computer
+		IF numStick <= 0 THEN
+			OUTPUT "Player has won."
+	ELSE THEN
+		OUTPUT "Computer has won."
+
+END
